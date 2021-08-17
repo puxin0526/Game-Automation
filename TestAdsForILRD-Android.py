@@ -1,7 +1,7 @@
 import re
 import time
 import wda
-from skimage.measure import compare_ssim
+# from skimage.measure import compare_ssim
 import numpy as np
 import cv2
 import uiautomator2 as u2
@@ -10,7 +10,7 @@ import uiautomator2 as u2
 # must install iTunes
 # pip3 install -U tidevice -i https://mirrors.aliyun.com/pypi/simple
 ### install uiautomator2 facebook-wda:
-# pip3 install uiautomator2 -i https://mirrors.aliyun.com/pypi/simple
+# pip3 install automaker2 -i https://mirrors.aliyun.com/pypi/simple
 # pip3 install -U facebook-wda -i https://mirrors.aliyun.com/pypi/simple
 # xcode need compile WebDriverAgent.xcodeproj to iOS device under developer signature
 ### find the UI element via web:
@@ -115,11 +115,11 @@ def isInitReady():
         return False
 
 
-i=0
+i = 0
 initCheat()
 showBanner()
 while True:
     if testInt():
         i += 1
-        print('Show Ads Num Success : '+str(i))
+        print('Show Ads Num Success : ' + str(i))
         time.sleep(20)

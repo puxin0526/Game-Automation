@@ -1,7 +1,8 @@
 import re
 import time
 import wda
-from skimage.measure import compare_ssim
+# from skimage.measure import compare_ssim
+from skimage import measure
 import numpy as np
 import cv2
 import uiautomator2 as u2
@@ -17,6 +18,7 @@ import uiautomator2 as u2
 # pip3 install -U weditor -i https://mirrors.aliyun.com/pypi/simple
 # python -m weditor
 # tidevice wdaproxy --port 8100
+
 
 c = wda.USBClient()
 c.session().app_start("puzzle.game.find.differences")
@@ -100,7 +102,7 @@ def testInt():
 
 def SSIM(img1, img2):
     img2 = np.resize(img2, (img1.shape[0], img1.shape[1], img1.shape[2]))
-    ssim = compare_ssim(img1, img2, multichannel=True)
+    ssim = measure.compare_ssim(img1, img2, multichannel=True)
     return ssim
 
 
@@ -118,6 +120,7 @@ def isInitReady():
     else:
         return False
 
+
 # c.screenshot('ScreenShot/temp.png')
 # image = cv2.imread('ScreenShot/temp.png')
 # image = image[int(image.shape[0] * 0.475): int(image.shape[0] * 0.50),
@@ -126,11 +129,11 @@ def isInitReady():
 # cv2.imwrite('ScreenShot/False.png', image)
 # cv2.waitKey()
 # exit(1)
-i=0
+i = 0
 initCheat()
 showBanner()
 while True:
     if testInt():
         i += 1
-        print('Show Ads Num Success : '+str(i))
+        print('Show Ads Num Success : ' + str(i))
         time.sleep(20)
