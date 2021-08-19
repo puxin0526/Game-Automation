@@ -2,53 +2,43 @@ from time import sleep
 
 import uiautomator2 as u2
 
+'''
+执行该case条件：需要启动游戏打开cheat
+将游戏返回到主界面
+
+'''
+
 
 class TestGetCoins:
 
     def setup_class(self):
-        self.d = u2.connect("127.0.0.1:7555")
+        self.d = u2.connect()
         self.d.app_start("puzzle.game.find.differences")
-        sleep(15)
-
-        # 跳过第一关教程
-        self.d.click(0.602, 0.177)
-        sleep(1)
-        self.d.click(0.34, 0.24)
-        sleep(0.5)
-        self.d.click(0.266, 0.164)
-        sleep(0.5)
-        self.d.click(0.446, 0.39)
-        sleep(0.5)
-        self.d.click(0.682, 0.308)
-        sleep(3)
-
-        # 返回主页
-        self.d.click(0.504, 0.833)
         sleep(2)
 
         # 打开Cheat
-        self.d.click(0.216, 0.951)
+        self.d.click(0.205, 0.955)
         sleep(1)
 
-        # 点击Cheat
-        self.d.click(0.316, 0.552)
+        # 点击主线关卡
+        self.d.click(0.321, 0.551)
         sleep(1)
         # 主线关卡跳转到第10关
         self.d.send_keys("10", clear=True)
         sleep(1)
         # 点击确定
-        self.d.click(0.958, 0.914)
+        self.d.xpath('//*[@text="确定"]').click()
         sleep(1)
         # 应用设置
-        self.d.click(0.498, 0.554)
+        self.d.click(0.501, 0.553)
         sleep(0.5)
         # 设置中恢复用户数据
-        self.d.click(0.892, 0.058)
+        self.d.click(0.888, 0.064)
         sleep(1)
-        self.d.click(0.708, 0.655)
+        self.d.click(0.707, 0.657)
         sleep(2)
         # 关闭设置
-        self.d.click(0.814, 0.237)
+        self.d.click(0.812, 0.235)
         sleep(1)
 
     def teardown_class(self):
@@ -61,15 +51,15 @@ class TestGetCoins:
         self.d.click(0.512, 0.688)
         sleep(3)
         # 通关
-        self.d.click(0.294, 0.243)
+        self.d.click(0.281, 0.288)
         sleep(0.5)
-        self.d.click(0.58, 0.186)
+        self.d.click(0.498, 0.316)
         sleep(0.5)
-        self.d.click(0.804, 0.192)
+        self.d.click(0.541, 0.401)
         sleep(0.5)
-        self.d.click(0.496, 0.271)
+        self.d.click(0.584, 0.227)
         sleep(0.5)
-        self.d.click(0.54, 0.354)
+        self.d.click(0.819, 0.235)
         sleep(6)
 
         # 点击继续将获得等额金币
@@ -84,23 +74,17 @@ class TestGetCoins:
         self.d.click(0.508, 0.689)
         sleep(3)
         # 使用放大镜
-        self.d.click(0.508, 0.852)
+        self.d.click(0.505, 0.941)
         sleep(3)
         # 点击提示的不同点
-        self.d.click(0.516, 0.632)
+        self.d.click(0.516, 0.314)
         sleep(0.5)
 
         # 游戏失败，使用金币继续
         for i in range(0, 5):
-
-            self.d.click(0.912, 0.292)
+            self.d.click(0.88, 0.17)
             sleep(0.5)
         # 点击继续
         sleep(1.5)
         self.d.click(0.726, 0.594)
         sleep(3)
-
-
-
-
-
