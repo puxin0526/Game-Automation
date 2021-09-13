@@ -21,7 +21,7 @@ class TestMallBuy:
         self.d.click(0.321, 0.06)
         sleep(1)
         # 充值100金币
-        self.d.click(0.202, 0.33)
+        self.d.click(0.217, 0.33)
         self.d.xpath('//*[@text="一键购买"]').click()
         sleep(5)
         # 点击x图标，返回到主界面
@@ -35,7 +35,7 @@ class TestMallBuy:
         self.d.click(0.935, 0.028)
         sleep(1)
         # 充值100金币
-        self.d.click(0.202, 0.33)
+        self.d.click(0.217, 0.33)
         self.d.xpath('//*[@text="一键购买"]').click()
         sleep(5)
         # 点击x图标，返回游戏
@@ -54,7 +54,7 @@ class TestMallBuy:
         self.d.click(0.321, 0.06)
         sleep(1)
         # 充值100金币
-        self.d.click(0.202, 0.33)
+        self.d.click(0.217, 0.33)
         sleep(1)
         self.d.press('back')
         sleep(3)
@@ -69,10 +69,7 @@ class TestMallBuy:
         self.d.click(0.935, 0.028)
         sleep(1)
         # 充值100金币
-        self.d.click(0.202, 0.33)
+        self.d.click(0.217, 0.33)
         sleep(1)
         self.d.press('back')
         sleep(3)
-
-    def test_kill_adv(self):
-        pass

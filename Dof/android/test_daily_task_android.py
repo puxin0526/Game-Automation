@@ -17,19 +17,20 @@ class TestGameInterface:
     def setup_class(self):
         self.d = u2.connect()
         self.d.app_start("puzzle.game.find.differences")
-        sleep(15)
 
         # 跳过第一关教程
-        self.d.click(0.602, 0.177)
-        sleep(1)
-        self.d.click(0.34, 0.24)
-        sleep(1)
-        self.d.click(0.266, 0.164)
-        sleep(1.5)
-        self.d.click(0.444, 0.44)
-        sleep(1)
-        self.d.click(0.682, 0.308)
+        self.d.click(0.615, 0.181)
+        sleep(0.5)
+        self.d.click(0.336, 0.242)
+        sleep(0.5)
+        self.d.click(0.261, 0.166)
+        sleep(0.5)
+        self.d.click(0.452, 0.42)
+        sleep(0.5)
+        self.d.click(0.697, 0.359)
         sleep(3)
+
+        # 返回主页
         # 下一关
         self.d.click(0.504, 0.722)
         sleep(2)
@@ -111,9 +112,6 @@ class TestGameInterface:
         self.d.click(0.506, 0.832)
         sleep(2)
 
-    def teardown_class(self):
-        self.d.app_stop('puzzle.game.find.differences')
-
     def test_daily_task(self):
         # 点击每日任务
         self.d.click(0.792, 0.871)
@@ -123,4 +121,3 @@ class TestGameInterface:
         sleep(2)
         # 返回继续
         self.d.click(0.502, 0.688)
-        sleep(4)

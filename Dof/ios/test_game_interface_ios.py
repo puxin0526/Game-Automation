@@ -17,15 +17,15 @@ class TestGameInterface:
         sleep(10)
 
         # 跳过第一关教程
-        self.d.click(0.602, 0.177)
-        sleep(1.5)
-        self.d.click(0.34, 0.24)
-        sleep(1.5)
-        self.d.click(0.266, 0.164)
+        self.d.click(0.615, 0.181)
         sleep(0.5)
-        self.d.click(0.446, 0.39)
+        self.d.click(0.336, 0.242)
         sleep(0.5)
-        self.d.click(0.682, 0.308)
+        self.d.click(0.261, 0.166)
+        sleep(0.5)
+        self.d.click(0.452, 0.42)
+        sleep(0.5)
+        self.d.click(0.697, 0.359)
         sleep(3)
 
     def teardown_class(self):
